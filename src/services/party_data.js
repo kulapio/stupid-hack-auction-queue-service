@@ -1,19 +1,19 @@
 module.exports = {
   '1': {
     name: 'พรรคเพื่อเธอ',
-    budget: 102,
+    budget: 202,
     img: 'http://aaaaa.com',
     color: '#FF3333'
   },
   '2': {
     name: 'พรรคประชาเล็ด',
-    budget: 90,
+    budget: 190,
     img: 'http://aaaaa.com',
     color: '#3333FF'
   },
   '3': {
     name: 'พรรคผ่อน',
-    budget: 80,
+    budget: 180,
     img: 'http://aaaaa.com',
     color: '#97D077'
   },
@@ -25,19 +25,19 @@ module.exports = {
   },
   '5': {
     name: 'พรรคครบ พบรัก',
-    budget: 120,
+    budget: 220,
     img: 'http://aaaaa.com',
     color: '#FF00FF'
   },
   '6': {
     name: 'พรรคพลังเมีย',
-    budget: 220,
+    budget: 270,
     img: 'http://aaaaa.com',
     color: '#CC0000'
   },
   '7': {
     name: 'พรรคกาดหอม',
-    budget: 70,
+    budget: 170,
     img: 'http://aaaaa.com',
     color: '#67AB9F'
   }
