@@ -59,11 +59,3 @@ typings/
 
 # next.js build output
 .next
-
-hfc-*
-
-.idea
-
-webapp/scripts
-webapp/src
-./upload
