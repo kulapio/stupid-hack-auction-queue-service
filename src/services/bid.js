@@ -1,9 +1,18 @@
+const Auction_process = require('./auction_process')
 const Auction = require('../models/auction.js')
 const partyData = require('./party_data.js')
 
 const chairServices = {
   async callBid (db, param) {
-    // const result = db.updatesomething()
+    const userId = param.party
+    const auctionId = param.bidTo
+    const price = param.bidAmount
+
+    console.log('param', param)
+    const auction_process = new Auction_process(db)
+    let output = await auction_process.bid(auctionId, userId, price) 
+    console.log(output)
+
     const result = { success: true }
     return result
   },
@@ -14,6 +23,7 @@ const chairServices = {
     let auctionListTransformed = auctionList.map(auctionInfo => {
       console.log('auctionInfo', auctionInfo)
       return {
+        id: auctionInfo.id,
         chair: auctionInfo.name,
         winnerParty: {
           name: partyData[auctionInfo.currentWinner].name,
@@ -22,7 +32,6 @@ const chairServices = {
         bidAmount: auctionInfo.currentPrice
       }
     })
-    console.log('done')
     
     return auctionListTransformed
 

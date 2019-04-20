@@ -1,17 +1,8 @@
 'use strict'
 
 class Auction_queue {
-  constructor() {
-    this.knex = require('knex')({
-      client: 'pg',
-      connection: {
-        host : 'localhost',
-        user : 'postgres',
-        password : 'postgres',
-        database : 'TEST_SM',
-        port: 6543
-      }
-    })
+  constructor(knex) {
+    this.knex = knex
   }
 
   async getAuctionQueue() {
