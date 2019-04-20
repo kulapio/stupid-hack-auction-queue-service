@@ -3,11 +3,11 @@ const Koa = require('koa')
 const cors = require('@koa/cors')
 const koaBody = require('koa-body')
 const router = require('./controllers')
-const es = require('./models/elasticsearch')
+const knex = require('./models/knex')
 const responseMiddleware = require('./middlewares/responseMiddleware')
 
 const app = new Koa()
-app.context.es = es
+app.context.db = knex
 
 app.use(cors())
 app.use(koaBody({
