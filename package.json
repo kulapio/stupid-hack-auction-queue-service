@@ -15,7 +15,6 @@
   "author": "www.kulap.io",
   "license": "ISC",
   "dependencies": {
-    "@elastic/elasticsearch": "^7.0.0-rc.1",
     "@koa/cors": "^2.2.3",
     "dotenv": "^7.0.0",
     "koa": "^2.7.0",
