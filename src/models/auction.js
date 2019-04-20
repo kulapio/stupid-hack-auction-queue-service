@@ -25,7 +25,7 @@ class Auction {
   }
 
   async getAuctionList() {
-    let output = await this.knex.select().from('auction').timeout(3000, {cancel: true})
+    let output = await this.knex.select().from('auction').orderBy('id').timeout(3000, {cancel: true})
     return output
   }
 }
