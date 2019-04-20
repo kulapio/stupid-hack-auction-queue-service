@@ -29,6 +29,7 @@ const chairServices = {
           id:  auctionInfo.currentWinner,
           name: partyData[auctionInfo.currentWinner].name,
           img: partyData[auctionInfo.currentWinner].img,
+          color:  partyData[auctionInfo.currentWinner].color
         },
         bidAmount: auctionInfo.currentPrice
       }
