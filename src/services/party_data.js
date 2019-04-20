@@ -1,7 +1,7 @@
 module.exports = {
   '1': {
     name: 'พรรค A',
-    budget: 100,
+    budget: 102,
     img: 'http://aaaaa.com'
   },
   '2': {

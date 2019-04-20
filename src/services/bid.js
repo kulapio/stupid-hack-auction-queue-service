@@ -21,11 +21,12 @@ const chairServices = {
     let auctionList = await auction.getAuctionList()
 
     let auctionListTransformed = auctionList.map(auctionInfo => {
-      console.log('auctionInfo', auctionInfo)
+      console.log('auctionInfo ', auctionInfo)
       return {
         id: auctionInfo.id,
         chair: auctionInfo.name,
         winnerParty: {
+          id:  auctionInfo.currentWinner,
           name: partyData[auctionInfo.currentWinner].name,
           img: partyData[auctionInfo.currentWinner].img,
         },
