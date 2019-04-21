@@ -6,6 +6,7 @@ exports.default = {
     { method: 'post', url: '/bid', handler: 'postBid' },
     { method: 'get', url: '/leader-board', handler: 'getLeaderBoard' },
     { method: 'post', url: '/start-auction', handler: 'postStartAuction' },
-    { method: 'post', url: '/stop-auction', handler: 'postStopAuction' }
+    { method: 'post', url: '/stop-auction', handler: 'postStopAuction' },
+    { method: 'get', url: '/is-auction-start', handler: 'getIsOpenAuction' }
   ]
 }

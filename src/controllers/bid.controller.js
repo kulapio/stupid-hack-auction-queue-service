@@ -1,5 +1,7 @@
 const bidServices = require('../services/bid')
 
+let isOpenAuction = false
+
 function getJsonFromUrl(url) {
   if(!url) url = location.href;
   var question = url.indexOf("?");
@@ -30,7 +32,14 @@ function getJsonFromUrl(url) {
 }
 
 const bidController = {
+  getIsOpenAuction (ctx) {
+    ctx.body = isOpenAuction
+  },
   async postBid (ctx) {
+    if (!isOpenAuction) {
+      ctx.body = { success: false, message: "Auction is not open." }
+      return
+    }
     const query = getJsonFromUrl(ctx.request.url)
     const param = {
       party: query.partyId,
@@ -45,10 +54,12 @@ const bidController = {
     ctx.body = result
   },
   async postStartAuction (ctx) {
+    isOpenAuction = true
     const result = await bidServices.stratAuction(ctx.db)
     ctx.body = result
   },
   async postStopAuction (ctx) {
+    isOpenAuction = false
     const result = await bidServices.stopAuction(ctx.db)
     ctx.body = result
   }
